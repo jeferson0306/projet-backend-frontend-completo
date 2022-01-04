@@ -1,6 +1,7 @@
 package com.cursomcspring.domain;
 
 import com.cursomcspring.domain.enums.EstadoPagamento;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public abstract class Pagamento implements Serializable {
     private Integer id;
     private Integer estado;
 
+    @JsonManagedReference
     @OneToOne
     @JoinColumn(name="pedido_id")
     @MapsId

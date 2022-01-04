@@ -1,18 +1,35 @@
 package com.cursomcspring;
 
-import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import com.cursomcspring.domain.*;
-import com.cursomcspring.domain.enums.EstadoPagamento;
-import com.cursomcspring.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import com.cursomcspring.domain.Categoria;
+import com.cursomcspring.domain.Cidade;
+import com.cursomcspring.domain.Cliente;
+import com.cursomcspring.domain.Endereco;
+import com.cursomcspring.domain.Estado;
+import com.cursomcspring.domain.ItemPedido;
+import com.cursomcspring.domain.Pagamento;
+import com.cursomcspring.domain.PagamentoComBoleto;
+import com.cursomcspring.domain.PagamentoComCartao;
+import com.cursomcspring.domain.Pedido;
+import com.cursomcspring.domain.Produto;
+import com.cursomcspring.domain.enums.EstadoPagamento;
 import com.cursomcspring.domain.enums.TipoCliente;
+import com.cursomcspring.repositories.CategoriaRepository;
+import com.cursomcspring.repositories.CidadeRepository;
+import com.cursomcspring.repositories.ClienteRepository;
+import com.cursomcspring.repositories.EnderecoRepository;
+import com.cursomcspring.repositories.EstadoRepository;
+import com.cursomcspring.repositories.ItemPedidoRepository;
+import com.cursomcspring.repositories.PagamentoRepository;
+import com.cursomcspring.repositories.PedidoRepository;
+import com.cursomcspring.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class CursomcApplication implements CommandLineRunner {
@@ -120,4 +137,4 @@ public class CursomcApplication implements CommandLineRunner {
 
 		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
 	}
-} 
+}
